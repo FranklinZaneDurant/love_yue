@@ -10,6 +10,10 @@ import java.util.Set;
  * @Author LoveYue
  */
 public class DataTypeUtil {
+
+    private DataTypeUtil() {
+    }
+
     private static final Set<Class<?>> PRIMITIVE_TYPES = new HashSet<>(Arrays.asList(
             Boolean.TYPE,
             Byte.TYPE,
