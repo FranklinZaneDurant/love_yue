@@ -1,13 +1,12 @@
-package entity;
+package com.loveyue.common.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonSetter;
-import enums.EntityStatusEnum;
+import com.loveyue.common.enums.EntityStatusEnum;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Column;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -30,7 +29,8 @@ public abstract class BaseBusinessEntity extends BaseEntity {
     @Column(nullable = false)
     @JsonFormat(
             shape = JsonFormat.Shape.STRING,
-            pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8"
+            pattern = "yyyy-MM-dd HH:mm:ss",
+            timezone = "GMT+8"
     )
     private Date createTime;
 
@@ -43,7 +43,8 @@ public abstract class BaseBusinessEntity extends BaseEntity {
     @Column(nullable = false)
     @JsonFormat(
             shape = JsonFormat.Shape.STRING,
-            pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8"
+            pattern = "yyyy-MM-dd HH:mm:ss",
+            timezone = "GMT+8"
     )
     private Date lastModifiedTime;
 
@@ -55,7 +56,8 @@ public abstract class BaseBusinessEntity extends BaseEntity {
     @Schema(description = "删除时间", type = "Date", format = "yyyy-MM-dd HH:mm:ss")
     @JsonFormat(
             shape = JsonFormat.Shape.STRING,
-            pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8"
+            pattern = "yyyy-MM-dd HH:mm:ss",
+            timezone = "GMT+8"
     )
     @Setter
     private Date deleteTime;

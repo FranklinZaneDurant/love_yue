@@ -1,4 +1,4 @@
-package uitls;
+package com.loveyue.common.uitls;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;

@@ -1,4 +1,4 @@
-package uitls;
+package com.loveyue.common.uitls;
 
 import java.util.Arrays;
 import java.util.HashSet;

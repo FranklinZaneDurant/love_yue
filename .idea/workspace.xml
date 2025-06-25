@@ -5,18 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5efe09e-d3fd-444f-a835-5a9d73525e7b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/entity/BaseBusinessEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/entity/BaseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/enums/EntityStatusEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/uitls/CryptoUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/uitls/LongUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/uitls/StringUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/config/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/dto/OperatorDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/dto/PageDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/enums/SortDirection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/enums/UserStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/service/BaseRedisService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/vo/BaseVo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/love-yue-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/love-yue-common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/love-yue-common/src/main/java/repository/BaseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/repository/BaseRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/love-yue-common/src/main/java/uitls/DataTypeUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/uitls/DataTypeUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-common/src/main/java/entity/BaseBusinessEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/entity/BaseBusinessEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-common/src/main/java/entity/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/entity/BaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-common/src/main/java/enums/EntityStatusEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/enums/EntityStatusEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-common/src/main/java/repository/BaseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/repository/BaseRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-common/src/main/java/uitls/CryptoUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/uitls/CryptoUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-common/src/main/java/uitls/DataTypeUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/uitls/DataTypeUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-common/src/main/java/uitls/LongUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/uitls/LongUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-common/src/main/java/uitls/StringUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/uitls/StringUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +32,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -125,7 +131,8 @@
       <workItem from="1750332144523" duration="1155000" />
       <workItem from="1750333313993" duration="3436000" />
       <workItem from="1750672510308" duration="11673000" />
-      <workItem from="1750686867672" duration="3793000" />
+      <workItem from="1750686867672" duration="4761000" />
+      <workItem from="1750849640649" duration="8751000" />
     </task>
     <servers />
   </component>

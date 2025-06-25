@@ -1,10 +1,10 @@
-package uitls;
+package com.loveyue.common.uitls;
 
 import org.springframework.util.CollectionUtils;
 
 import java.util.*;
 
-import static uitls.StringUtils.trim;
+import static com.loveyue.common.uitls.StringUtils.trim;
 
 /**
  * 字符串工具。
