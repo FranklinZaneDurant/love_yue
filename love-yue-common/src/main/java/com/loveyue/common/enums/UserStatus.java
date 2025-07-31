@@ -13,7 +13,7 @@ import lombok.Getter;
 public enum UserStatus {
     ACTIVE("正常", "用户可正常使用系统功能"),
     DISABLED("禁用", "管理员手动限制、违规操作"),
-    DELETED("注销", "用户账户被主动删除、用户长时间未登录删除"),
+    PENDING("待激活", "用户账户被主动删除、用户长时间未登录删除"),
     LOCKED("锁定", "多次输错密码自动锁定");
 
     private final String displayName;

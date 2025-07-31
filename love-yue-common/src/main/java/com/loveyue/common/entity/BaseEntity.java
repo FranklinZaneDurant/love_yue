@@ -17,7 +17,7 @@ import java.io.Serializable;
  */
 @Data
 @MappedSuperclass
-public abstract class BaseEntity implements Serializable {
+public class BaseEntity implements Serializable {
     @Serial
     private static final long serialVersionUID = 5908489787919929004L;
 
@@ -25,6 +25,10 @@ public abstract class BaseEntity implements Serializable {
     @Id
     @Column(nullable = false)
     private Long id;
+
+    @Column(name = "extra_attributes", columnDefinition = "TEXT")
+    @Schema(name = "扩展属性（JSON格式存储）")
+    private String extraAttributes;
 
     protected BaseEntity() {
         this(generateId());

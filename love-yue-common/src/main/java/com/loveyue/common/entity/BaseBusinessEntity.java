@@ -4,10 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonSetter;
 import com.loveyue.common.enums.EntityStatusEnum;
 import io.swagger.v3.oas.annotations.media.Schema;
-import jakarta.persistence.Column;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -23,7 +20,7 @@ import static io.swagger.v3.oas.annotations.media.Schema.RequiredMode.REQUIRED;
  */
 @Getter
 @MappedSuperclass
-public abstract class BaseBusinessEntity extends BaseEntity {
+public class BaseBusinessEntity extends BaseEntity {
     @Serial
     private static final long serialVersionUID = -6530988839804601100L;
 
@@ -78,6 +75,11 @@ public abstract class BaseBusinessEntity extends BaseEntity {
     @Column
     @Setter
     private Boolean deleted;
+
+    @Version
+    @Column(name = "version", nullable = false)
+    @Schema(name = "版本号（用于乐观锁）")
+    private Long version = 0L;
 
     protected BaseBusinessEntity() {
         this(null);
