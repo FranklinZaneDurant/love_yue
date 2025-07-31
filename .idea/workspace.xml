@@ -5,23 +5,82 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5efe09e-d3fd-444f-a835-5a9d73525e7b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/config/RedisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/dto/OperatorDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/dto/PageDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/enums/SortDirection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/enums/UserStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/service/BaseRedisService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/vo/BaseVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/dto/BaseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/dto/PageResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/enums/ResponseCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/exception/BusinessException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/handler/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/response/ListResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/utils/ResponseUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/love-yue-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/love-yue-common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/love-yue-common/src/main/java/entity/BaseBusinessEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/entity/BaseBusinessEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/love-yue-common/src/main/java/entity/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/entity/BaseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/love-yue-common/src/main/java/enums/EntityStatusEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/enums/EntityStatusEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/love-yue-common/src/main/java/repository/BaseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/repository/BaseRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/love-yue-common/src/main/java/uitls/CryptoUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/uitls/CryptoUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/love-yue-common/src/main/java/uitls/DataTypeUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/uitls/DataTypeUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/love-yue-common/src/main/java/uitls/LongUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/uitls/LongUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/love-yue-common/src/main/java/uitls/StringUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/uitls/StringUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/src/main/java/com/loveyue/auth/AuthApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/src/main/java/com/loveyue/auth/config/AuthConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/src/main/java/com/loveyue/auth/controller/AuthController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/src/main/java/com/loveyue/auth/controller/TokenValidationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/src/main/java/com/loveyue/auth/dto/LoginDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/src/main/java/com/loveyue/auth/dto/LoginRequestDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/src/main/java/com/loveyue/auth/dto/LogoutRequestDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/src/main/java/com/loveyue/auth/dto/RefreshTokenDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/src/main/java/com/loveyue/auth/dto/TokenValidationDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/src/main/java/com/loveyue/auth/dto/TokenValidationRequestDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/src/main/java/com/loveyue/auth/entity/RoleEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/src/main/java/com/loveyue/auth/entity/UserEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/src/main/java/com/loveyue/auth/entity/UserLoginLogEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/src/main/java/com/loveyue/auth/entity/UserRoleEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/src/main/java/com/loveyue/auth/entity/UserTokenEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/src/main/java/com/loveyue/auth/exception/AccountLockedException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/src/main/java/com/loveyue/auth/exception/AuthException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/src/main/java/com/loveyue/auth/exception/InvalidTokenException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/src/main/java/com/loveyue/auth/exception/LoginFailedException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/src/main/java/com/loveyue/auth/exception/TokenExpiredException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/src/main/java/com/loveyue/auth/exception/UserNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/src/main/java/com/loveyue/auth/repository/RoleRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/src/main/java/com/loveyue/auth/repository/UserLoginLogRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/src/main/java/com/loveyue/auth/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/src/main/java/com/loveyue/auth/repository/UserRoleRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/src/main/java/com/loveyue/auth/repository/UserTokenRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/src/main/java/com/loveyue/auth/service/AuthService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/src/main/java/com/loveyue/auth/service/TokenUpdateService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/src/main/java/com/loveyue/auth/service/TokenValidationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/src/main/java/com/loveyue/auth/service/impl/AuthServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/src/main/java/com/loveyue/auth/service/impl/TokenValidationServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/src/main/java/com/loveyue/auth/task/AuthScheduledTasks.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/src/main/java/com/loveyue/auth/util/PasswordUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/src/main/resources/application-dev.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/src/main/resources/application-prod.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-auth/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/config/WebConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/context/RequestContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/context/RequestContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/controller/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/controller/BaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/dto/PageDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/dto/PageDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/enums/EntityStatusEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/enums/EntityStatusEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/enums/SortDirection.java" beforeDir="false" afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/enums/SortDirection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/enums/UserStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/enums/UserStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/interceptor/RequestContextInterceptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/response/BaseResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/response/BaseResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/response/ListObjectResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/response/ObjectResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/love-yue-common/src/main/java/com/loveyue/common/response/ObjectResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-gateway/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-gateway/src/main/java/com/loveyue/gateway/GatewayApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-gateway/src/main/java/com/loveyue/gateway/client/AuthServiceClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-gateway/src/main/java/com/loveyue/gateway/config/GatewayConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-gateway/src/main/java/com/loveyue/gateway/config/RateLimitConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-gateway/src/main/java/com/loveyue/gateway/config/WebClientConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-gateway/src/main/java/com/loveyue/gateway/dto/BooleanApiResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-gateway/src/main/java/com/loveyue/gateway/dto/TokenValidationApiResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-gateway/src/main/java/com/loveyue/gateway/dto/TokenValidationRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-gateway/src/main/java/com/loveyue/gateway/dto/TokenValidationResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-gateway/src/main/java/com/loveyue/gateway/filter/AuthGlobalFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-gateway/src/main/java/com/loveyue/gateway/filter/CustomGatewayFilterFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-gateway/src/main/java/com/loveyue/gateway/filter/RequestLogFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-gateway/src/main/java/com/loveyue/gateway/handler/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/love-yue-gateway/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +90,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -81,7 +140,8 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -90,7 +150,24 @@
       <recent name="D:\wrokspace\java\love_yue.git\love-yue-common\src\main\java\uitls" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="KtorApplicationConfigurationType" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.EurekaServerApplication">
+    <configuration name="AuthApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="love-yue-auth" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.loveyue.auth.AuthApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="eureka-server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.loveyue.eureka.EurekaServerApplication" />
@@ -104,6 +181,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="love-yue-gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.loveyue.gateway.GatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.EurekaServerApplication" />
@@ -113,8 +197,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.23309.22" />
-        <option value="bundled-js-predefined-d6986cc7102b-6be00b7b0f42-JavaScript-IU-252.23309.22" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.23892.360" />
+        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-IU-252.23892.360" />
       </set>
     </attachedChunks>
   </component>
@@ -132,7 +216,10 @@
       <workItem from="1750333313993" duration="3436000" />
       <workItem from="1750672510308" duration="11673000" />
       <workItem from="1750686867672" duration="4761000" />
-      <workItem from="1750849640649" duration="8751000" />
+      <workItem from="1750849640649" duration="9347000" />
+      <workItem from="1750954123805" duration="26000" />
+      <workItem from="1753956494011" duration="6565000" />
+      <workItem from="1753963085555" duration="1533000" />
     </task>
     <servers />
   </component>

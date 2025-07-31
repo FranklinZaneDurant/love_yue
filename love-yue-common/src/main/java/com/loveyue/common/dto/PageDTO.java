@@ -11,11 +11,12 @@ import java.io.Serial;
 import java.io.Serializable;
 
 /**
- * @Description: 分页查询数据传输对象
+ * @Description: 分页查询数据传输类
  * @Date 2025/6/25
  * @Author LoveYue
  */
 @Data
+@Schema(description = "分页查询数据传输类")
 public class PageDTO implements Serializable {
     @Serial
     private static final long serialVersionUID = 4783954388680412204L;
@@ -37,9 +38,6 @@ public class PageDTO implements Serializable {
 
     @Schema(description = "排序字段", type = "String")
     private String field;
-
-    @Schema(description = "查询结果总数", type = "int")
-    private int count;
 
     public PageDTO() {
         this.pageNo = DEFAULT_PAGE_NO;

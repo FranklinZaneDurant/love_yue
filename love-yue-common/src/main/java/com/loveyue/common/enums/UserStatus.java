@@ -1,5 +1,6 @@
 package com.loveyue.common.enums;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 
 /**
@@ -8,6 +9,7 @@ import lombok.Getter;
  * @Author LoveYue
  */
 @Getter
+@Schema(description = "用户状态枚举类")
 public enum UserStatus {
     ACTIVE("正常", "用户可正常使用系统功能"),
     DISABLED("禁用", "管理员手动限制、违规操作"),

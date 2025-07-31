@@ -1,5 +1,6 @@
 package com.loveyue.common.context;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
@@ -8,12 +9,12 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @Description: 请求上下文传输对象
+ * @Description: 请求上下文传输类
  * @Date 2025/07/13
  * @Author LoveYue
  */
 @Data
-@Schema(description = "请求上下文传输对象")
+@Schema(description = "请求上下文传输类")
 public class RequestContext implements Serializable {
     @Serial
     private static final long serialVersionUID = -7732289244541764022L;
@@ -28,6 +29,7 @@ public class RequestContext implements Serializable {
     private String requestId;
 
     @Schema(description = "请求时间")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date requestTime;
 
     @Schema(description = "客户端IP")
