@@ -1,14 +1,14 @@
 package com.loveyue.gateway.filter;
 
 import cn.hutool.core.util.StrUtil;
-import com.loveyue.gateway.util.JwtUtil;
+import com.loveyue.gateway.client.AuthServiceClient;
+import com.loveyue.gateway.dto.TokenValidationResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
-import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.server.reactive.ServerHttpRequest;
@@ -31,8 +31,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class AuthGlobalFilter implements GlobalFilter, Ordered {
 
-    private final JwtUtil jwtUtil;
-    private final StringRedisTemplate redisTemplate;
+    private final AuthServiceClient authServiceClient;
     private final AntPathMatcher pathMatcher = new AntPathMatcher();
 
     @Value("${gateway.whitelist}")
@@ -41,7 +40,11 @@ public class AuthGlobalFilter implements GlobalFilter, Ordered {
     private static final String TOKEN_PREFIX = "Bearer ";
     private static final String USER_ID_HEADER = "X-User-Id";
     private static final String USERNAME_HEADER = "X-Username";
-    private static final String TOKEN_BLACKLIST_PREFIX = "token:blacklist:";
+    private static final String DEPT_ID_HEADER = "X-Dept-Id";
+    private static final String ROLES_HEADER = "X-Roles";
+    private static final String PERMISSIONS_HEADER = "X-Permissions";
+    private static final String DEVICE_ID_HEADER = "X-Device-Id";
+    private static final String SESSION_ID_HEADER = "X-Session-Id";
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
@@ -63,40 +66,49 @@ public class AuthGlobalFilter implements GlobalFilter, Ordered {
             return unauthorizedResponse(response, "缺少身份验证令牌");
         }
         
-        // 验证token
-        if (!jwtUtil.validateToken(token)) {
-            log.warn("请求{}的令牌无效", path);
-            return unauthorizedResponse(response, "无效的认证令牌n");
-        }
-        
-        // 检查token是否在黑名单中
-        if (isTokenBlacklisted(token)) {
-            log.warn("用于请求{}的黑名单令牌", path);
-            return unauthorizedResponse(response, "令牌已被撤销");
-        }
-        
-        // 提取用户信息
-        String userId = jwtUtil.getUserIdFromToken(token).orElse(null);
-        String username = jwtUtil.getUsernameFromToken(token).orElse(null);
-        
-        if (StrUtil.isBlank(userId)) {
-            log.warn("在请求{}的令牌中找不到用户ID", path);
-            return unauthorizedResponse(response, "无效令牌有效载荷");
-        }
-        
-        // 添加用户信息到请求头
-        ServerHttpRequest modifiedRequest = request.mutate()
-                .header(USER_ID_HEADER, userId)
-                .header(USERNAME_HEADER, username)
-                .build();
-        
-        ServerWebExchange modifiedExchange = exchange.mutate()
-                .request(modifiedRequest)
-                .build();
-        
-        log.debug("用户{}访问{}的身份验证成功", username, path);
-        
-        return chain.filter(modifiedExchange);
+        // 调用认证服务验证token
+        return authServiceClient.validateToken(token)
+                .flatMap(validationResponse -> {
+                    if (!validationResponse.isValid()) {
+                        log.warn("请求{}的令牌验证失败: {}", path, validationResponse.getErrorMessage());
+                        return unauthorizedResponse(response, validationResponse.getErrorMessage());
+                    }
+                    
+                    // 添加用户信息到请求头
+                    ServerHttpRequest.Builder requestBuilder = request.mutate()
+                            .header(USER_ID_HEADER, String.valueOf(validationResponse.getUserId()))
+                            .header(USERNAME_HEADER, validationResponse.getUsername());
+                    
+                    // 添加可选的用户信息
+                    if (StrUtil.isNotBlank(validationResponse.getDeptId())) {
+                        requestBuilder.header(DEPT_ID_HEADER, validationResponse.getDeptId());
+                    }
+                    if (validationResponse.getRoles() != null && !validationResponse.getRoles().isEmpty()) {
+                        requestBuilder.header(ROLES_HEADER, String.join(",", validationResponse.getRoles()));
+                    }
+                    if (validationResponse.getPermissions() != null && !validationResponse.getPermissions().isEmpty()) {
+                        requestBuilder.header(PERMISSIONS_HEADER, String.join(",", validationResponse.getPermissions()));
+                    }
+                    if (StrUtil.isNotBlank(validationResponse.getDeviceId())) {
+                        requestBuilder.header(DEVICE_ID_HEADER, validationResponse.getDeviceId());
+                    }
+                    if (StrUtil.isNotBlank(validationResponse.getSessionId())) {
+                        requestBuilder.header(SESSION_ID_HEADER, validationResponse.getSessionId());
+                    }
+                    
+                    ServerHttpRequest modifiedRequest = requestBuilder.build();
+                    ServerWebExchange modifiedExchange = exchange.mutate()
+                            .request(modifiedRequest)
+                            .build();
+                    
+                    log.debug("用户{}访问{}的身份验证成功", validationResponse.getUsername(), path);
+                    
+                    return chain.filter(modifiedExchange);
+                })
+                .onErrorResume(throwable -> {
+                    log.error("令牌验证过程中发生错误: {}", throwable.getMessage());
+                    return unauthorizedResponse(response, "认证服务不可用");
+                });
     }
 
     /**
@@ -136,21 +148,7 @@ public class AuthGlobalFilter implements GlobalFilter, Ordered {
         return null;
     }
 
-    /**
-     * 检查token是否在黑名单中
-     *
-     * @param token JWT token
-     * @return 是否在黑名单中
-     */
-    private boolean isTokenBlacklisted(String token) {
-        try {
-            String key = TOKEN_BLACKLIST_PREFIX + token;
-            return redisTemplate.hasKey(key);
-        } catch (Exception e) {
-            log.error("检查令牌黑名单时出错：{}", e.getMessage());
-            return true;
-        }
-    }
+
 
     /**
      * 返回未授权响应

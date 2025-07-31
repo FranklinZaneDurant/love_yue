@@ -3,8 +3,9 @@ package com.loveyue.common.entity;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Column;
 import jakarta.persistence.Id;
+import jakarta.persistence.MappedSuperclass;
 import lombok.Data;
-import com.loveyue.common.uitls.CryptoUtils;
+import com.loveyue.common.utils.CryptoUtils;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -15,6 +16,7 @@ import java.io.Serializable;
  * @Author LoveYue
  */
 @Data
+@MappedSuperclass
 public abstract class BaseEntity implements Serializable {
     @Serial
     private static final long serialVersionUID = 5908489787919929004L;

@@ -26,6 +26,7 @@
         <module>eureka-server</module>
         <module>love-yue-common</module>
         <module>love-yue-gateway</module>
+        <module>love-yue-auth</module>
     </modules>
 
     <dependencyManagement>

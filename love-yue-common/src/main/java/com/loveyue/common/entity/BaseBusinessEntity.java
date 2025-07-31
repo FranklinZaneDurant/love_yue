@@ -7,6 +7,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Column;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.MappedSuperclass;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -21,6 +22,7 @@ import static io.swagger.v3.oas.annotations.media.Schema.RequiredMode.REQUIRED;
  * @Author LoveYue
  */
 @Getter
+@MappedSuperclass
 public abstract class BaseBusinessEntity extends BaseEntity {
     @Serial
     private static final long serialVersionUID = -6530988839804601100L;

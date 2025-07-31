@@ -5,7 +5,7 @@ import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
 import jakarta.persistence.criteria.*;
 import org.springframework.data.domain.*;
-import com.loveyue.common.uitls.DataTypeUtil;
+import com.loveyue.common.utils.DataTypeUtil;
 
 import java.util.*;
 

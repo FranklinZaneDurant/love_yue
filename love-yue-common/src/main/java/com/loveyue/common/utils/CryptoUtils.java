@@ -1,4 +1,4 @@
-package com.loveyue.common.uitls;
+package com.loveyue.common.utils;
 
 import org.apache.commons.io.IOUtils;
 import org.springframework.util.DigestUtils;
