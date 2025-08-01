@@ -27,8 +27,7 @@ import java.util.Date;
         @Index(name = "idx_username", columnList = "username", unique = true),
         @Index(name = "idx_email", columnList = "email", unique = true),
         @Index(name = "idx_phone", columnList = "phone"),
-        @Index(name = "idx_user_status", columnList = "user_status"),
-        @Index(name = "idx_created_time", columnList = "createdTime")
+        @Index(name = "idx_user_status", columnList = "user_status")
 })
 @Data
 @Builder

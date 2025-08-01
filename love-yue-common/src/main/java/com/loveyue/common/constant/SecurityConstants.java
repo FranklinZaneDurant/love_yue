@@ -355,6 +355,11 @@ public class SecurityConstants {
     public static final String AUDIT_SENSITIVE_OPERATION = "SENSITIVE_OPERATION";
 
     /**
+     * 访问拒绝事件
+     */
+    public static final String AUDIT_EVENT_ACCESS_DENIED = "ACCESS_DENIED";
+
+    /**
      * 手机号脱敏正则
      */
     public static final String PHONE_MASK_REGEX = "(\\d{3})\\d{4}(\\d{4})";
